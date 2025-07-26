@@ -1,0 +1,45 @@
+using System;
+
+class Student{
+	string name;
+    int roll;
+    double gpa;
+    
+    // Constructor 
+   public Student(string name,int roll, double gpa){
+    	this.name = name;
+        this.roll = roll;
+        this.gpa = gpa;
+    }
+    
+    // method to display all detail
+   public void displayinfo(){
+    	Console.WriteLine($"your name is {this.name} , roll is {this.roll} and gpa is {this.gpa}");
+    }
+}
+// another class 
+class Graduate_stsudent:Student{
+	string thesis_title;
+    
+    // declaring constructor of Graduate_stsudent class
+    public Graduate_stsudent(string name,int roll,double gpa,string thesis_title):base(name,roll,gpa){
+    	this.thesis_title = thesis_title;
+    }
+    // method
+    public void Fullinfo(){
+    	displayinfo(); //its inheritated method from paren class
+        Console.WriteLine($"The thesis_Title is => {this.thesis_title} ");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, Bibek!");
+       // Student s1 = new Student("Bibek",03,3.15);
+        //s1.displayinfo();
+        Graduate_stsudent s1 = new Graduate_stsudent("Bibek",3,3.15,"Ai Engineer" );
+        s1.Fullinfo();
+    }
+}
