@@ -1,0 +1,37 @@
+using System;
+
+class Student 
+{
+	string name;
+    double gpa;
+    Student(string name,double gpa){
+    this.name = name;
+    this.gpa = gpa;
+    }
+    // method declaration under class
+    void display(){
+    //using formatted string with "$"dollar symbol which gives us to write variable in printing sting like python 
+    Console.WriteLine($"your name is {this.name} and gpa is {this.gpa}"  );
+    }
+    // declaring method 
+    static int factorial(int n){
+    if (n ==0 || n < 1){
+    return 1;
+    }else {
+    return n * factorial(n-1);
+    }
+    }
+    static int square(int n){
+    	return (n * n);
+    }
+    static void Main()
+    {
+        Console.WriteLine("Hello, Mono!");
+        Student s1 = new Student("Bibek",3.15); 
+        s1.display();
+        Console.WriteLine($"The factorial of given number is {factorial(5)}");
+        Console.WriteLine($"The square of given number is {square(25)}");
+        
+        
+    }
+}
