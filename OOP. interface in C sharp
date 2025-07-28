@@ -1,0 +1,68 @@
+using System;
+using System.Collections.Generic;
+//interface 
+interface Animal{
+	void animalsound();
+    void eat();
+    void sleeping();
+}
+//Child class 
+class Pig:Animal{
+	string name;
+    string food;
+	public Pig(string name,string food){
+    	this.name = name;
+        this.food = food;
+    }
+    public void animalsound(){
+    	Console.WriteLine($"{this.name} Pig Sound is oink oink...");
+        
+    }
+    public void eat(){
+    	Console.WriteLine($"{this.name} is eating {this.food}" );
+    }
+    public void sleeping(){
+    	Console.WriteLine($"{this.name} is sleeping");
+    }
+}
+//Another child class Goat 
+class Goat:Animal{
+	string name;
+    string food;
+	public Goat(string name,string food){
+    	this.name = name;
+        this.food = food;
+    }
+    public void animalsound(){
+    	Console.WriteLine($"{this.name} Goat Sound is meh meh..");
+        
+    }
+    public void eat(){
+    	Console.WriteLine($"{this.name} is eating {this.food}" );
+    }
+    public void sleeping(){
+    	Console.WriteLine($"{this.name} is sleeping");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, Guy's!");
+        Console.WriteLine("=======Animal world!======== ");
+        //List of interface
+        List<Animal> zoo = new List<Animal>{
+        	new Pig("Tom","Rice" ),
+            new Goat("Jerry","Grass or rice"),
+            new Pig("🐷 Max","🍺 🍺🍻"),
+            new Goat("🐐Ruby"," water 💦" )
+            };
+        foreach(Animal animal in zoo){
+        	animal.animalsound();
+            animal.eat();
+            animal.sleeping();
+         Console.WriteLine("-------------------------------");
+        }
+    }
+}
